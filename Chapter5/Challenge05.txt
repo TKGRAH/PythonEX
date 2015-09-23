@@ -1,0 +1,24 @@
+Challenge 1:
+1. XY: in_features
+2. Dissolve: in_features, out_feature_class
+3. XY: No optional
+4. Dissolve: dissolve_field(default:N/A), statistics_fields(default:N/A), multi_part(default:MULTI_PART), unsplit_lines(default:DISSOLVE_LINES)
+Challenge 2:
+arcpy.AddXY_management(“hospitals.shp”)
+Challenge 3: 
+arcpy.Dissolve_management(“parks.shp”, “C:/output/output.gdb/parks_dissolved”,  [“PARK_TYPE”], “”, “SINGLE_PART”, “”)
+Challenge 4: 
+if arcpy.CheckExtension(“3DAnalyst”) == “Available”:
+	print “3D Analyst available.”
+else:
+	print “3D Analyst not available” 
+if arcpy.CheckExtension(“NetworkAnalyst”) == “Available”:
+	print “Network Analyst available.”
+else:
+	print “Network Analyst not available”
+if arcpy.CheckExtension(“Spatial”) == “Available”:
+	print “Spatial available.”
+else:
+	print “Spatial not available”
+
+
