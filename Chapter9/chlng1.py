@@ -1,4 +1,6 @@
 def chlng1():
+    import arcpy
+    arcpy.CheckOutExtension("spatial")
     from arcpy import env
     env.workspace = "P:/Python/Data/Exercise09"
     outraster = arcpy.sa.Slope("elevation")
@@ -11,7 +13,7 @@ def chlng1():
     elevraster = arcpy.Raster("elevation")
     outraster3 = elevraster * 3.281
     outraster3.save("elev_ft")
-    slope = Slope(elevraster)
+    slope = arcpy.sa.Slope(elevraster)
     goodslope = 5 < slope < 20 and 150 < slope < 270
     goodfinal = goodslope
     goodfinal.save("final")
@@ -24,3 +26,4 @@ def chlng1():
         arcpy.CheckInExtension("spatial")
     else:
         print "Spatial Analyst license is not available."
+    
